@@ -7,9 +7,9 @@ sources:
     tables:
       - name: customer
       - name: orders
+        columns:
+            - name: orderid
+              tests:
+                  - unique
+                  - not_null
       - name: product
-          columns:
-            loaded_at_field: loadedat
-            freshness:
-              warn_after: {count:12, period:hour}
-              error_after: {count:12, period:hour}
